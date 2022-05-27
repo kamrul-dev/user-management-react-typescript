@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
-interface User{
+interface User {
     name: string,
     job: string
 }
@@ -11,17 +11,21 @@ const Counter = () => {
     const [user, setUser] = useState<User | null>(null);
 
 
-    const handleIncrease = (): void =>{
-        setCount( counter + 1)
+    const handleIncrease = (): void => {
+        setCount(counter + 1)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const userData = {
             name: 'Admin',
             job: 'Dev'
         }
         setUser(userData)
+    }
+
+    const handleNameChange = (e: ChangeEvent<HTMLInputElement>): void => {
+
     }
 
     return (
