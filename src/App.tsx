@@ -10,16 +10,18 @@ let students: string[] = ['kamrul', 'hasan', 'babu'];
 
 let fees: number[] = [12, 45, 78, 12, 45];
 
-interface Person{
+interface Person {
   name: string,
   job?: string,
-  age: number
+  employed: string | boolean,
+  age: number,
+  location?: string | number
 }
-
 const person: Person = {
   name: 'Bill',
-
-  age: 85
+  employed: true,
+  age: 85,
+  location: 55
 
 }
 /* const person: {name: string, job: string, age: number} = {
@@ -27,6 +29,16 @@ const person: Person = {
   job: 'jobless',
   age: 85
 } */
+
+
+
+const handleAddUser = (firstName: string, age: number, address: string):number => {
+  const total: number = 50;
+  console.log(firstName, age, address);
+  return age;
+}
+
+
 
 
 function App() {
